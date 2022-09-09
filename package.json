@@ -1,0 +1,41 @@
+{
+  "type": "commonjs",
+  "name": "@aminnairi/rollup-plugin-sitemap",
+  "description": "Sitemap generator",
+  "version": "0.1.0",
+  "homepage": "https://github.com/aminnairi/rollup-plugin-sitemap#readme",
+  "license": "GPL-3.0-or-later",
+  "main": "build/index.js",
+  "packageManager": "npm",
+  "bugs": {
+    "url": "https://github.com/aminnairi/rollup-plugin-sitemap/issues"
+  },
+  "author": {
+    "name": "Amin NAIRI",
+    "url": "https://github.com/aminnairi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aminnairi/rollup-plugin-sitemap.git"
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [
+    "sitemap",
+    "generator",
+    "xml",
+    "rollup",
+    "plugin"
+  ],
+  "scripts": {
+    "production": "rollup --config rollup.config.ts --environment NODE_ENV:production"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "8.5.0",
+    "@types/node": "18.7.16",
+    "rollup": "2.79.0",
+    "tslib": "2.4.0",
+    "typescript": "4.8.3"
+  }
+}
