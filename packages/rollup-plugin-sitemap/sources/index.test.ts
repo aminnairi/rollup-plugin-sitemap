@@ -256,27 +256,6 @@ describe("sitemap", () => {
     expect(emittedFile?.source).toContain("Allow: /");
   });
 
-  it("should handle missing userAgent in robots rules", () => {
-    const plugin = sitemap({
-      baseUrl: "https://example.com",
-      urls: [{ location: "/" }],
-      robots: {
-        rules: [
-          {
-            allow: "/"
-          }
-        ]
-      }
-    });
-
-    // @ts-expect-error - generateBundle is private but we need to call it
-    plugin.generateBundle.call(mockContext);
-
-    const emittedFile = mockEmitFile.mock.calls.find((call: any[]) => call[0]?.fileName === "robots.txt")?.[0];
-    expect(emittedFile?.fileName).toBe("robots.txt");
-    expect(emittedFile?.source).not.toContain("User-Agent:");
-  });
-
   it("should handle baseUrl without trailing slash", () => {
     const plugin = sitemap({
       baseUrl: "https://example.com",

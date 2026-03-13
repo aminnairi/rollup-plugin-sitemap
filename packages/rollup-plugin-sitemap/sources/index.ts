@@ -68,7 +68,7 @@ export interface RobotsRule {
    * Robots matching this user agent will be allowed to execute this rule
    * @example sitemap({ robots: { rules: [ { userAgent: "GPTBot" } ] } })
    */
-  userAgent?: string
+  userAgent: string
 }
 
 export interface Robots {
@@ -176,7 +176,7 @@ export const sitemap = (options: Options): Plugin => {
           const descriptionLine = rule.description ? `# ${rule.description}` : "";
           const allowLine = rule.allow ? `Allow: ${rule.allow}` : "";
           const disallowLine = rule.disallow ? `Disallow: ${rule.disallow}` : "";
-          const userAgentLine = rule.userAgent ? `User-Agent: ${rule.userAgent}` : "";
+          const userAgentLine = `User-Agent: ${rule.userAgent}`;
 
           return [
             descriptionLine,
