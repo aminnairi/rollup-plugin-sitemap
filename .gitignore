@@ -4,3 +4,4 @@
 **/.npmrc
 **/dist
 **/build
+**/coverage
