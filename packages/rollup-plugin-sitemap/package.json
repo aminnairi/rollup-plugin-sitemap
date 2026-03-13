@@ -2,7 +2,7 @@
   "type": "module",
   "name": "@aminnairi/rollup-plugin-sitemap",
   "description": "Sitemap generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/aminnairi/rollup-plugin-sitemap",
   "license": "MIT",
   "main": "build/index.js",
