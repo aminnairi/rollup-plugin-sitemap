@@ -12,7 +12,6 @@ Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/aminnairi/rollup-plugin-sitemap
-cd rollup-plugin-sitemap
 npm install
 ```
 
@@ -21,19 +20,43 @@ npm install
 Build the plugin:
 
 ```bash
-cd packages/rollup-plugin-sitemap
-npm run build
+npm -w @aminnairi/rollup-plugin-sitemap run build
 ```
 
 The built files will be in `packages/rollup-plugin-sitemap/build/`.
 
 ## Testing
 
+Run the unit tests:
+
+```bash
+npm -w @aminnairi/rollup-plugin-sitemap run test
+```
+
+Run tests in watch mode:
+
+```bash
+npm -w @aminnairi/rollup-plugin-sitemap run test:watch
+```
+
+Run tests with coverage report:
+
+```bash
+npm -w @aminnairi/rollup-plugin-sitemap exec -- vitest run --coverage
+```
+
 To test the plugin with the example:
 
 ```bash
-cd example
-npm run build
+npm -w example run build
+```
+
+## Linting
+
+Run the TypeScript linter:
+
+```bash
+npm -w @aminnairi/rollup-plugin-sitemap run lint
 ```
 
 ## Proposing changes
