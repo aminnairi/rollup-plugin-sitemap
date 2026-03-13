@@ -68,7 +68,7 @@ export interface RobotsRule {
    * Robots matching this user agent will be allowed to execute this rule
    * @example sitemap({ robots: { rules: [ { userAgent: "GPTBot" } ] } })
    */
-  userAgent: string
+  userAgent?: string
 }
 
 export interface Robots {
