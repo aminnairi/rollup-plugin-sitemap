@@ -409,6 +409,25 @@ MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Changelog
 
+### 1.0.1 (2026-03-13)
+
+#### Features
+
+- Added vitest testing framework with 100% code coverage
+- Added GitHub Actions workflows:
+  - Development workflow (lint + build on `development` branch)
+  - Production workflow (lint + test + coverage + build on `production` branch)
+- Added badges to README (npm, types, license, codecov)
+
+#### Documentation
+
+- Added testing commands to CONTRIBUTING.md
+- Added `test`, `test:watch`, and `test --coverage` scripts
+
+#### Fixes
+
+- Made `userAgent` optional in `RobotsRule` interface
+
 ### 1.0.0 (2026-03-13)
 
 #### Breaking changes
