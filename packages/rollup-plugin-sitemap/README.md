@@ -1,5 +1,10 @@
 # @aminnairi/rollup-plugin-sitemap
 
+[![npm version](https://img.shields.io/npm/v/@aminnairi/rollup-plugin-sitemap.svg)](https://www.npmjs.com/package/@aminnairi/rollup-plugin-sitemap)
+[![types: included](https://img.shields.io/badge/types-included-blue)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Codecov](https://img.shields.io/codecov/c/github/aminnairi/rollup-plugin-sitemap)](https://codecov.io/gh/aminnairi/rollup-plugin-sitemap)
+
 Sitemap generator
 
 ## Installation
