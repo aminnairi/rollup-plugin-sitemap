@@ -23,23 +23,16 @@ jobs:
         run: npm install
 
       - name: Run linter
-        run: npm run lint
-        working-directory: packages/rollup-plugin-sitemap
+        run: npm -w packages/rollup-plugin-sitemap run lint
 
       - name: Run tests with coverage
-        run: npx vitest run --coverage
-        working-directory: packages/rollup-plugin-sitemap
+        run: npm -w packages/rollup-plugin-sitemap test
 
       - name: Build
-        run: npm run build
-        working-directory: packages/rollup-plugin-sitemap
+        run: npm -w packages/rollup-plugin-sitemap run build
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
-          files: ./coverage/coverage-final.json
-          directory: ./coverage
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: false
-          verbose: true
+          directory: ./packages/rollup-plugin-sitemap/coverage
+          token: ${{ secrets.CODECOV_TOKEN }}
