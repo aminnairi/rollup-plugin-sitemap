@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/@aminnairi/rollup-plugin-sitemap.svg)](https://www.npmjs.com/package/@aminnairi/rollup-plugin-sitemap)
 [![types: included](https://img.shields.io/badge/types-included-blue)](https://www.typescriptlang.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Codecov](https://img.shields.io/codecov/c/github/aminnairi/rollup-plugin-sitemap)](https://codecov.io/gh/aminnairi/rollup-plugin-sitemap)
+[![Codecov](https://img.shields.io/codecov/c/github/aminnairi/rollup-plugin-sitemap)](<https://codecov.io/gh/aminnairi/rollup-plugin-[![codecov](https://codecov.io/gh/aminnairi/rollup-plugin-sitemap/graph/badge.svg?token=DCCQ6G5HF9)](https://codecov.io/gh/aminnairi/rollup-plugin-sitemap)sitemap>)
 
 Sitemap generator
 
@@ -219,8 +219,8 @@ cat build/sitemap.xml
 By default, the sitemap is generated at `sitemap.xml`. You can customize this by using the `path` option:
 
 ```javascript
-import { defineConfig } from "rollup"
-import { sitemap } from "@aminnairi/rollup-plugin-sitemap"
+import { defineConfig } from "rollup";
+import { sitemap } from "@aminnairi/rollup-plugin-sitemap";
 
 export default defineConfig({
   input: "index.js",
@@ -228,16 +228,14 @@ export default defineConfig({
     sitemap({
       baseUrl: "https://domain.com",
       path: "subcategory.sitemap.xml",
-      urls: [
-        { location: "/" }
-      ]
-    })
+      urls: [{ location: "/" }],
+    }),
   ],
   output: {
     file: "build/index.js",
-    format: "esm"
-  }
-})
+    format: "esm",
+  },
+});
 ```
 
 ```xml
@@ -255,27 +253,25 @@ cat build/subcategory.sitemap.xml
 You can also generate a `robots.txt` file alongside your sitemap using the `robots` option:
 
 ```javascript
-import { defineConfig } from "rollup"
-import { sitemap } from "@aminnairi/rollup-plugin-sitemap"
+import { defineConfig } from "rollup";
+import { sitemap } from "@aminnairi/rollup-plugin-sitemap";
 
 export default defineConfig({
   input: "index.js",
   plugins: [
     sitemap({
       baseUrl: "https://domain.com",
-      urls: [
-        { location: "/" }
-      ],
+      urls: [{ location: "/" }],
       robots: {
-        sitemap: true
-      }
-    })
+        sitemap: true,
+      },
+    }),
   ],
   output: {
     file: "build/index.js",
-    format: "esm"
-  }
-})
+    format: "esm",
+  },
+});
 ```
 
 ```txt
@@ -288,39 +284,37 @@ Sitemap: https://domain.com/sitemap.xml
 You can add custom rules to the `robots.txt` file:
 
 ```javascript
-import { defineConfig } from "rollup"
-import { sitemap } from "@aminnairi/rollup-plugin-sitemap"
+import { defineConfig } from "rollup";
+import { sitemap } from "@aminnairi/rollup-plugin-sitemap";
 
 export default defineConfig({
   input: "index.js",
   plugins: [
     sitemap({
       baseUrl: "https://domain.com",
-      urls: [
-        { location: "/" }
-      ],
+      urls: [{ location: "/" }],
       robots: {
         sitemap: true,
         rules: [
           {
             description: "Block GPT Bot from indexing",
             userAgent: "GPTBot",
-            disallow: "/"
+            disallow: "/",
           },
           {
             description: "Allow Google Bot to index everything",
             userAgent: "Googlebot",
-            allow: "/"
-          }
-        ]
-      }
-    })
+            allow: "/",
+          },
+        ],
+      },
+    }),
   ],
   output: {
     file: "build/index.js",
-    format: "esm"
-  }
-})
+    format: "esm",
+  },
+});
 ```
 
 ```txt
@@ -341,29 +335,36 @@ Allow: /
 This package exports TypeScript types for advanced configuration:
 
 ```typescript
-import { defineConfig } from "rollup"
-import { sitemap, type ChangeFrequency, type Priority, type Url, type Robots, type RobotsRule } from "@aminnairi/rollup-plugin-sitemap"
+import { defineConfig } from "rollup";
+import {
+  sitemap,
+  type ChangeFrequency,
+  type Priority,
+  type Url,
+  type Robots,
+  type RobotsRule,
+} from "@aminnairi/rollup-plugin-sitemap";
 
-const changeFrequency: ChangeFrequency = "monthly"
-const priority: Priority = 0.8
+const changeFrequency: ChangeFrequency = "monthly";
+const priority: Priority = 0.8;
 
 const url: Url = {
   location: "/",
   lastModified: new Date(),
   changeFrequency,
-  priority
-}
+  priority,
+};
 
 const robotsRule: RobotsRule = {
   description: "Block GPT Bot",
   userAgent: "GPTBot",
-  disallow: "/"
-}
+  disallow: "/",
+};
 
 const robots: Robots = {
   sitemap: true,
-  rules: [robotsRule]
-}
+  rules: [robotsRule],
+};
 
 export default defineConfig({
   input: "index.js",
@@ -371,14 +372,14 @@ export default defineConfig({
     sitemap({
       baseUrl: "https://domain.com",
       urls: [url],
-      robots
-    })
+      robots,
+    }),
   ],
   output: {
     file: "build/index.js",
-    format: "esm"
-  }
-})
+    format: "esm",
+  },
+});
 ```
 
 ### ChangeFrequency
