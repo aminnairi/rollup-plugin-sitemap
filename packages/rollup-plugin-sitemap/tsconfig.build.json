@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./sources"
+  },
+  "exclude": [
+    "sources/**/*.test.ts",
+    "vitest.config.ts",
+    "rollup.config.ts"
+  ]
+}
