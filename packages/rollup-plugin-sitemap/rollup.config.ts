@@ -7,7 +7,9 @@ export default defineConfig({
     "path"
   ],
   plugins: [
-    typescript()
+    typescript({
+      tsconfig: "./tsconfig.build.json"
+    })
   ],
   output: {
     file: "./build/index.js",
